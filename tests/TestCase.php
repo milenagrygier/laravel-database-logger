@@ -1,8 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SchmidtMilena\DbLogger\Tests;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
 use SchmidtMilena\DbLogger\Providers\DbLoggerServiceProvider;
 
@@ -17,25 +20,18 @@ class TestCase extends Orchestra
         );
     }
 
-    protected function getPackageProviders($app)
+    protected function getPackageProviders($app): array
     {
         return [
             DbLoggerServiceProvider::class,
         ];
     }
 
-    public function getEnvironmentSetUp($app)
+    public function getEnvironmentSetUp($app): void
     {
-        $app['config']->set('database.default', 'sqlite');
-        $app['config']->set('database.connections.sqlite', [
-            'driver' => 'sqlite',
-            'database' => ':memory:',
-            'prefix' => '',
-        ]);
+        Schema::dropAllTables();
 
-        /*
-        include_once __DIR__.'/../database/migrations/create_laravel8_database_logger_table.php.stub';
-        (new \CreatePackageTable())->up();
-        */
+        include_once __DIR__.'/../database/migrations/create_logs_table.php.stub';
+        (new \CreateLogsTable())->up();
     }
 }

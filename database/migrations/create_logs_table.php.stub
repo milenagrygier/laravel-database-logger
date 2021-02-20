@@ -1,25 +1,27 @@
 <?php
 
+declare(strict_types=1);
+
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDbLoggerTable extends Migration
+class CreateLogsTable extends Migration
 {
-    public function up()
+    public function up(): void
     {
         Schema::create('logs', function (Blueprint $table) {
-                $table->bigIncrements('id');
-                $table->string('instance')->index();
-                $table->string('channel')->index();
-                $table->string('level')->index();
-                $table->string('level_name');
-                $table->longText('message')->nullable();
-                $table->longText('context')->nullable();
-                $table->ipAddress('remote_addr')->nullable();
-                $table->string('user_agent')->nullable();
-                $table->integer('created_by')->nullable()->index();
-                $table->dateTime('created_at');
+            $table->bigIncrements('id');
+            $table->string('instance')->index();
+            $table->string('channel')->index();
+            $table->string('level')->index();
+            $table->string('level_name');
+            $table->longText('message')->nullable();
+            $table->longText('context')->nullable();
+            $table->ipAddress('remote_addr')->nullable();
+            $table->string('user_agent')->nullable();
+            $table->integer('created_by')->nullable()->index();
+            $table->dateTime('created_at');
         });
     }
 }

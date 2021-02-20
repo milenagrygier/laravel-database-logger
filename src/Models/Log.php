@@ -1,9 +1,12 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SchmidtMilena\DbLogger\Models;
 
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 /**
  * @property int $id,
@@ -20,6 +23,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class Log extends Model
 {
+    use HasFactory;
+
     public $timestamps = false;
     protected $table = 'logs';
 

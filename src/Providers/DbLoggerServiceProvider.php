@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SchmidtMilena\DbLogger\Providers;
 
 use Spatie\LaravelPackageTools\Package;
