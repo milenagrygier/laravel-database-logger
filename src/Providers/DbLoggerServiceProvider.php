@@ -2,7 +2,6 @@
 
 namespace SchmidtMilena\DbLogger\Providers;
 
-use SchmidtMilena\DbLogger\Commands\DbLoggerCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
 

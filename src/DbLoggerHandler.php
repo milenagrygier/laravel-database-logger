@@ -2,9 +2,9 @@
 
 namespace SchmidtMilena\DbLogger;
 
+use Monolog\Handler\AbstractProcessingHandler;
 use Monolog\Logger;
 use SchmidtMilena\DbLogger\Models\Log;
-use Monolog\Handler\AbstractProcessingHandler;
 
 class DbLoggerHandler extends AbstractProcessingHandler
 {
