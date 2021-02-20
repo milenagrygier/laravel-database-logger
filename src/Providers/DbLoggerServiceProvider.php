@@ -10,14 +10,15 @@ class DbLoggerServiceProvider extends PackageServiceProvider
     public function boot(): void
     {
         $this->publishes([
-            __DIR__.'/../database/migrations/' => database_path('migrations')
+            __DIR__.'/../database/migrations/' => database_path('migrations'),
         ], 'migrations');
     }
 
     public function register(): void
     {
         $this->mergeConfigFrom(
-            __DIR__.'/../config/logging.php', 'logging'
+            __DIR__.'/../config/logging.php',
+            'logging'
         );
     }
 
