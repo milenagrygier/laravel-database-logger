@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace SchmidtMilena\DbLogger\Database\Factories;
 
 use SchmidtMilena\DbLogger\Models\Log;
@@ -19,7 +21,7 @@ class LogFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         return [
             'message' => 'test',
