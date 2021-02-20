@@ -8,23 +8,13 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
         php: [8.0, 7.4]
         laravel: [8.*]
         stability: [prefer-lowest, prefer-stable]
         include:
           - laravel: 8.*
             testbench: 6.*
-    services:
-      mysql:
-          image: mysql:5.7
-          env:
-              MYSQL_ALLOW_EMPTY_PASSWORD: yes
-              MYSQL_DATABASE: test
-          ports:
-              - 3306
-          options: --health-cmd="mysqladmin ping" --health-interval=10s --health-timeout=5s --health-retries=3
-                  In the step that executes the test, you should add an env variable
 
     name: P${{ matrix.php }} - L${{ matrix.laravel }} - ${{ matrix.stability }} - ${{ matrix.os }}
 
@@ -49,8 +39,13 @@ jobs:
           composer require "laravel/framework:${{ matrix.laravel }}" "orchestra/testbench:${{ matrix.testbench }}" --no-interaction --no-update
           composer update --${{ matrix.stability }} --prefer-dist --no-interaction
 
+      - name: Create database
+        run: |
+          sudo /etc/init.d/mysql start
+          mysql -u root -proot -e 'CREATE DATABASE IF NOT EXISTS test'
+
       - name: Execute tests
         run: vendor/bin/phpunit
         env:
-          DB_PORT: ${{ job.services.mysql.ports[3306] }}
+          DB_PORT: ${{ job.services.mysql.ports[3306]}}
           DB_PASSWORD: root
