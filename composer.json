@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_name/:package_name",
-    "description": ":package_description",
+    "name": "schmidtmilena/laravel8-database-logger",
+    "description": "Database logger for Laravel 8",
     "keywords": [
-        ":vendor_name",
-        ":package_name"
+        "schmidtmilena",
+        "laravel8-database-logger"
     ],
-    "homepage": "https://github.com/:vendor_name/:package_name",
+    "homepage": "https://github.com/schmidtmilena/laravel8-database-logger",
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": ":author_email",
+            "name": "Milena Schmidt",
+            "email": "milenaschmidt@protonmail.com",
             "role": "Developer"
         }
     ],
@@ -27,13 +27,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Spatie\\Skeleton\\": "src",
-            "Spatie\\Skeleton\\Database\\Factories\\": "database/factories"
+            "SchmidtMilena\\DbLogger\\": "src",
+            "SchmidtMilena\\DbLogger\\Database\\Factories\\": "database/factories"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "Spatie\\Skeleton\\Tests\\": "tests"
+            "SchmidtMilena\\DbLogger\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -47,10 +47,10 @@
     "extra": {
         "laravel": {
             "providers": [
-                "Spatie\\Skeleton\\SkeletonServiceProvider"
+                "SchmidtMilena\\DbLogger\\DbLoggerServiceProvider"
             ],
             "aliases": {
-                "Skeleton": "Spatie\\Skeleton\\SkeletonFacade"
+                "DbLogger": "SchmidtMilena\\DbLogger\\DbLoggerFacade"
             }
         }
     },

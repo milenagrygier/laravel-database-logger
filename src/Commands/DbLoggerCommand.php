@@ -1,12 +1,12 @@
 <?php
 
-namespace Spatie\Skeleton\Commands;
+namespace SchmidtMilena\DbLogger\Commands;
 
 use Illuminate\Console\Command;
 
-class SkeletonCommand extends Command
+class DbLoggerCommand extends Command
 {
-    public $signature = 'skeleton';
+    public $signature = 'laravel8-database-logger';
 
     public $description = 'My command';
 

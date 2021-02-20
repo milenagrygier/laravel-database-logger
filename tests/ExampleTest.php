@@ -1,6 +1,6 @@
 <?php
 
-namespace Spatie\Skeleton\Tests;
+namespace SchmidtMilena\DbLogger\Tests;
 
 class ExampleTest extends TestCase
 {
