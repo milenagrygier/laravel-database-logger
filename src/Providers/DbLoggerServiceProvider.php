@@ -1,10 +1,9 @@
 <?php
 
-namespace SchmidtMilena\DbLogger;
+namespace SchmidtMilena\DbLogger\Providers;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
-use SchmidtMilena\DbLogger\Commands\DbLoggerCommand;
 
 class DbLoggerServiceProvider extends PackageServiceProvider
 {
@@ -17,9 +16,6 @@ class DbLoggerServiceProvider extends PackageServiceProvider
          */
         $package
             ->name('laravel8-database-logger')
-            ->hasConfigFile()
-            ->hasViews()
-            ->hasMigration('create_laravel8_database_logger_table')
-            ->hasCommand(DbLoggerCommand::class);
+            ->hasMigration('create_logs_table');
     }
 }

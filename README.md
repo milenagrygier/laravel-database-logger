@@ -27,13 +27,13 @@ composer require schmidtmilena/laravel8-database-logger
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="SchmidtMilena\DbLogger\DbLoggerServiceProvider" --tag="laravel8-database-logger-migrations"
+php artisan vendor:publish --provider="SchmidtMilena\DbLogger\Providers\DbLoggerServiceProvider" --tag="laravel8-database-logger-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 ```bash
-php artisan vendor:publish --provider="SchmidtMilena\DbLogger\DbLoggerServiceProvider" --tag="laravel8-database-logger-config"
+php artisan vendor:publish --provider="SchmidtMilena\DbLogger\Providers\DbLoggerServiceProvider" --tag="laravel8-database-logger-config"
 ```
 
 This is the contents of the published config file:

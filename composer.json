@@ -7,13 +7,11 @@
     ],
     "homepage": "https://github.com/schmidtmilena/laravel8-database-logger",
     "license": "MIT",
-    "authors": [
-        {
-            "name": "Milena Schmidt",
-            "email": "milenaschmidt@protonmail.com",
-            "role": "Developer"
-        }
-    ],
+    "authors": [{
+        "name": "Milena Schmidt",
+        "email": "milenaschmidt@protonmail.com",
+        "role": "Developer"
+    }],
     "require": {
         "php": "^7.4|^8.0",
         "spatie/laravel-package-tools": "^1.1",
@@ -27,8 +25,7 @@
     },
     "autoload": {
         "psr-4": {
-            "SchmidtMilena\\DbLogger\\": "src",
-            "SchmidtMilena\\DbLogger\\Database\\Factories\\": "database/factories"
+            "SchmidtMilena\\DbLogger\\": "src"
         }
     },
     "autoload-dev": {
@@ -47,10 +44,12 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SchmidtMilena\\DbLogger\\DbLoggerServiceProvider"
+                "SchmidtMilena\\DbLogger\\Providers\\DbLoggerServiceProvider"
             ],
             "aliases": {
-                "DbLogger": "SchmidtMilena\\DbLogger\\DbLoggerFacade"
+                "DbHandler": "SchmidtMilena\\DbLogger\\DbLoggerHandler",
+                "DbFormatter": "SchmidtMilena\\DbLogger\\Formatter",
+                "Monolog": "SchmidtMilena\\DbLogger\\Monolog"
             }
         }
     },
