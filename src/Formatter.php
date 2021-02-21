@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace SchmidtMilena\DbLogger;
 
 use Carbon\Carbon;
+use Illuminate\Support\Facades\Auth;
 use Monolog\Formatter\NormalizerFormatter;
 
 class Formatter extends NormalizerFormatter
@@ -32,6 +33,7 @@ class Formatter extends NormalizerFormatter
                 $data['context'] = json_encode($data['context']);
             }
         }
+        $data['created_by'] = Auth::id();
 
         return $data;
     }
