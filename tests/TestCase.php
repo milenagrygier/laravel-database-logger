@@ -7,7 +7,7 @@ namespace SchmidtMilena\DbLogger\Tests;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
-use SchmidtMilena\DbLogger\Providers\DbLoggerServiceProvider;
+use SchmidtMilena\DbLogger\DbLoggerServiceProvider;
 
 class TestCase extends Orchestra
 {
@@ -29,7 +29,7 @@ class TestCase extends Orchestra
 
     public function getEnvironmentSetUp($app): void
     {
-        Schema::dropAllTables();
+        Schema::dropIfExists('logs');
 
         include_once __DIR__.'/../database/migrations/create_logs_table.php.stub';
         (new \CreateLogsTable())->up();

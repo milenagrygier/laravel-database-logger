@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace SchmidtMilena\DbLogger\Providers;
+namespace SchmidtMilena\DbLogger;
 
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;

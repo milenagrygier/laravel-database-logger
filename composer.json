@@ -45,7 +45,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "SchmidtMilena\\DbLogger\\Providers\\DbLoggerServiceProvider"
+                "SchmidtMilena\\DbLogger\\DbLoggerServiceProvider"
             ],
             "aliases": {
                 "DbHandler": "SchmidtMilena\\DbLogger\\DbLoggerHandler",
