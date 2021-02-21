@@ -4,20 +4,24 @@ declare(strict_types=1);
 
 namespace SchmidtMilena\DbLogger;
 
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use Illuminate\Support\ServiceProvider;
 
-class DbLoggerServiceProvider extends PackageServiceProvider
+class DbLoggerServiceProvider extends ServiceProvider
 {
-    public function configurePackage(Package $package): void
+    /**
+     * Bootstrap any package services.
+     *
+     * @return void
+     */
+    public function boot()
     {
-        /*
-         * This class is a Package Service Provider
-         *
-         * More info: https://github.com/spatie/laravel-package-tools
-         */
-        $package
-            ->name('laravel8-database-logger')
-            ->hasMigration('create_logs_table');
+        if (! class_exists('CreateLogsTable')) {
+            $timestamp = date('Y_m_d_His', time());
+
+
+            $this->publishes([
+                __DIR__ . '/../database/migrations/create_logs_table.php.stub' => database_path("/migrations/{$timestamp}_create_logs_table.php"),
+            ], 'migrations');
+        }
     }
 }
