@@ -16,21 +16,30 @@ composer require schmidtmilena/laravel8-database-logger
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --provider="SchmidtMilena\DbLogger\DbLoggerServiceProvider" --tag="laravel8-database-logger-migrations"
-php artisan migrate
+php artisan vendor:publish --tag=migrations
 ```
 
 ## Usage
-
+After publishing migration run:
 ```php
-$laravel8-database-logger = new SchmidtMilena\DbLogger();
-echo $laravel8-database-logger->echoPhrase('Hello, SchmidtMilena!');
+php artisan migrate
 ```
+Add custom driver to your logging.php file:
+```php
+    'channels' => [
+        'stack' => [
+            'driver' => 'stack',
+            'channels' => ['mysql'],
+        ],
 
-## Testing
-
-```bash
-composer test
+    // [...]
+    'mysql' => [
+        'driver' => 'monolog',
+        'via' => SchmidtMilena\DbLogger\Monolog::class,
+        'handler' => SchmidtMilena\DbLogger\DbLoggerHandler::class,
+        'formatter' => SchmidtMilena\DbLogger\Formatter::class,
+        'name' => 'mysqllogger'
+    ],
 ```
 
 ## Changelog
@@ -48,7 +57,6 @@ Please review [our security policy](../../security/policy) on how to report secu
 ## Credits
 
 - [Milena Schmidt](https://github.com/SchmidtMilena)
-- [All Contributors](../../contributors)
 
 ## License
 
