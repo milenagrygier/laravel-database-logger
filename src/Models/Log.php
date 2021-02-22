@@ -39,7 +39,6 @@ class Log extends Model
         'context',
         'created_at',
         'created_by',
-        'user_id',
     ];
 
     protected $casts = [
@@ -53,6 +52,5 @@ class Log extends Model
         'context' => 'string',
         'created_at' => 'datetime',
         'created_by' => 'int',
-        'user_id' => 'int',
     ];
 }
