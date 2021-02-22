@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace SchmidtMilena\DbLogger\Tests;
 
+use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Facades\Schema;
 use Orchestra\Testbench\TestCase as Orchestra;
-use Illuminate\Database\Eloquent\Factories\Factory;
 use SchmidtMilena\DbLogger\DbLoggerServiceProvider;
 
 class TestCase extends Orchestra
