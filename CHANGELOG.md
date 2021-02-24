@@ -12,3 +12,6 @@ All notable changes to `laravel8-database-logger` will be documented in this fil
 ## 1.1.1 - 2021-02-22
 
 - remove unused user_id from Log casts and fillable 
+## 2.1.1 - 2021-02-22
+
+- rename

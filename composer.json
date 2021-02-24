@@ -1,11 +1,11 @@
 {
-    "name": "schmidtmilena/laravel8-database-logger",
+    "name": "schmidtmilena/laravel-database-logger",
     "description": "Database logger for Laravel 8",
     "keywords": [
         "schmidtmilena",
         "laravel8-database-logger"
     ],
-    "homepage": "https://github.com/schmidtmilena/laravel8-database-logger",
+    "homepage": "https://github.com/schmidtmilena/laravel-database-logger",
     "license": "MIT",
     "authors": [{
         "name": "Milena Schmidt",
@@ -13,7 +13,7 @@
         "role": "Developer"
     }],
     "require": {
-        "php": "^7.4|^8.0",
+        "php": "^7.4",
         "illuminate/contracts": "^8.0"
     },
     "require-dev": {
