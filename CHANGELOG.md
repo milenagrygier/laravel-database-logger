@@ -18,3 +18,6 @@ All notable changes to `laravel8-database-logger` will be documented in this fil
 ## 2.1.2 - 2021-02-24
 
 - fix php version
+## 2.1.3 - 2021-02-25
+
+- fix database testing
