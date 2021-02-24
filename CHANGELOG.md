@@ -1,6 +1,6 @@
 # Changelog
 
-All notable changes to `laravel8-database-logger` will be documented in this file.
+All notable changes to `laravel-database-logger` will be documented in this file.
 
 ## 1.0.0 - 2021-02-21
 
@@ -21,3 +21,6 @@ All notable changes to `laravel8-database-logger` will be documented in this fil
 ## 2.1.3 - 2021-02-25
 
 - fix database testing
+## 2.1.4 - 2021-02-25
+
+- fix package name and tags

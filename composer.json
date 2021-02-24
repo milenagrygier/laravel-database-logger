@@ -3,7 +3,7 @@
     "description": "Database logger for Laravel 8",
     "keywords": [
         "schmidtmilena",
-        "laravel8-database-logger"
+        "laravel-database-logger"
     ],
     "homepage": "https://github.com/schmidtmilena/laravel-database-logger",
     "license": "MIT",
